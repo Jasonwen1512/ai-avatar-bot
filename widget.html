@@ -52,7 +52,7 @@
       <button class="ctrl" id="btn-close" title="收起">✕</button>
     </div>
   </div>
-  <div id="disclaimer">⚠ 示範資訊・非醫療建議</div>
+  <div id="disclaimer">✨ 可一行嵌入網站・Demo</div>
   <div id="direct-warn">請透過 <code>embed.js</code> 載入此元件。</div>
 
   <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
@@ -281,7 +281,7 @@
     if (window.LLM && window.LLM.state === 'ready') {
       const ctx = topK(q, 3).map(e => 'Q：' + e.q + '\nA：' + e.a).join('\n---\n');
       const messages = [
-        { role: 'system', content: '你是親切的「健檢小幫手」（示範用）。請用繁體中文、口語、最多兩三句話簡短回答。優先依據【參考資料】回答；資料沒有的就用常識簡短回應，不確定就老實說不知道，不要編造醫療數據或價格。涉及健康判斷時，請補一句提醒對方「實際情況請諮詢專業醫師」。本資訊僅供參考、非醫療建議。\n\n【參考資料】\n' + (ctx || '（無）') },
+        { role: 'system', content: '你是「可嵌入任何網站的語音虛擬人元件」的示範助手。主題是教人「怎麼把這個元件裝到自己的網站、怎麼換成自己的角色、怎麼使用」。請用繁體中文、口語、最多兩三句話簡短回答。優先依據【參考資料】回答；資料沒有的就用常識簡短回應，不確定就老實說不知道。\n\n【參考資料】\n' + (ctx || '（無）') },
         { role: 'user', content: q }
       ];
       try {
@@ -395,7 +395,7 @@
     onTap._lock = true;
     setTimeout(() => { onTap._lock = false; }, 400);
     if (model) try { model.motion('Tap'); } catch (e) {}
-    speak('你好～我是示範用的佔位虛擬人，點下面的麥克風就能跟我說話！');
+    speak('你好～我是可以嵌入任何網站的語音虛擬人，問我怎麼安裝、怎麼換成你的角色都行！');
   }
 
   // ===== 控制列 =====
